@@ -1,0 +1,212 @@
+[
+  {
+    "chunk_id": "DOC-98003_p1_c1",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 1,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 1 PROTOTYPE TEST DOCUMENT CMPDI ANNUAL GEOLOGICAL EXPLORATION REPORT Illustrative Annual Report Dataset for AI Document Processing & Reporting Prototype Report Attribute Test Value Document ID CMPDI-GEO-TEST-2025-026 Reporting Year 2024\u201325 Document Type Annual Geological Exploration Report Document Status Synthetic / Prototype Test Data Purpose Testing OCR, extraction, validation, topic analysis, RAG and report generation Prepared For SIH Problem Statement 26023 Prototype IMPORTANT: This document is artificially generated for software testing. It is not an official CMPDI or CIL report, does not represent actual exploration results, and must not be treated as operational or government data."
+  },
+  {
+    "chunk_id": "DOC-98003_p2_c2",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 2,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 2 TESTING PURPOSE This sample is intentionally structured like a technical annual geological exploration report so that the prototype can be tested against realistic document-processing tasks. It contains headings, narrative text, tables, numerical values, units, dates, repeated entities, historical comparisons, exploration activities and deliberate validation cases. Recommended prototype functions to test: 1. OCR and text extraction 2. Table extraction 3. Geological field extraction 4. Numerical and unit normalization 5. Cross-table validation 6. Document search and semantic retrieval 7. Topic identification and word cloud generation 8. AI question answering with source/page citations 9. Automated annual-report generation 10. Detection of intentionally inserted inconsistencies. 1. EXECUTIVE SUMMARY During the 2024\u201325 reporting period, the Exploration Division conducted geological exploration activities across selected coal-bearing blocks in the Central Sector. The programme covered reconnaissance, regional exploration, detailed exploration, drilling, geological mapping, core logging, sampling and laboratory analysis. The illustrative programme recorded 18,460 metres of drilling against a planned 17,800 metres. The exploration programme focused on improving geological confidence, evaluating coal seam continuity, estimating resources and supporting future mine planning. The test dataset includes information from four illustrative exploration blocks: Karanpur East, Shakti North, Nandini Extension and Surya South. The prototype should be able to identify the difference between planned and achieved drilling, extract resource estimates, identify the highest drilling achievement, compare coal quality parameters, and retrieve evidence for each answer. 2. ORGANISATIONAL & REPORT INFORMATION Field Value Organisation Central Mine Planning & Design Institute \u2014 TEST DATASET Sector Geological Exploration Reporting Period 01 April 2024 to 31 March 2025 Report Reference GEO/ANNUAL/TEST/2024-25/026 Prepared By Exploration Data Cell \u2014 Prototype Dataset Review Status For AI system testing only Units Used Metres, hectares, million tonnes, %, kcal/kg, metres/day 3. EXPLORATION PROGRAMME Block State Area (ha) Planned Drilling (m) Achieved (m) Boreholes Karanpur East Illustrative State A 2,840 4,200 4,480 24 Shakti North Illustrative State B 3,150 5,100 4,920 27 Nandini Extension Illustrative State A 2,460 3,600 3,840 21 Surya South Illustrative State C 3,720 4,900 5,220 29 TOTAL \u2014 12,170 17,800 18,460 101 Observation for validation: The achieved drilling total is greater than the planned total. The system should calculate the percentage achievement and identify blocks where actual drilling was below plan. 4. GEOLOGICAL EXPLORATION ACTIVITIES The annual programme included geological mapping, drilling, core recovery assessment, lithological logging, seam correlation, sampling and laboratory testing. Mapping was undertaken to improve understanding of lithological boundaries and structural trends. Drill cores were logged for lithology, seam thickness, roof and floor characteristics, partings and quality-related observations."
+  },
+  {
+    "chunk_id": "DOC-98003_p3_c3",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 3,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 3 Activity Target Achieved Unit Achievement % Geological Mapping 11,500 12,140 ha 105.57 Drilling 17,800 18,460 m 103.71 Core Logging 17,800 18,210 m 102.30 Coal Samples 620 648 samples 104.52 Quality Analysis 600 631 samples 105.17 5. BOREHOLE SUMMARY Block Completed Boreholes Total Depth (m) Avg. Depth (m) Core Recovery % Karanpur East 24 4,480 186.67 91.4 Shakti North 27 4,920 182.22 89.8 Nandini Extension 21 3,840 182.86 93.1 Surya South 29 5,220 180.00 90.7 TOTAL / AVG. 101 18,460 182.77 91.3 Test extraction targets: borehole count, total depth, average depth, core recovery and block-level comparisons. 6. COAL SEAM INTERSECTION SUMMARY Seam No. of Intersections Avg. Thickness (m) Min (m) Max (m) Continuity Status Seam A 31 2.84 1.62 4.18 Moderate to Good Seam B 28 3.26 1.74 5.06 Good Seam C 19 1.92 1.10 3.12 Moderate Seam D 23 4.11 2.38 6.24 Good Seam E 14 1.48 0.92 2.26 Limited 7. RESOURCE ESTIMATION Illustrative geological resource figures were estimated using the exploration information available during the reporting period. The figures below are synthetic and are included solely to test structured extraction, calculations and report generation. Block Measured (Mt) Indicated (Mt) Inferred (Mt) Total (Mt) Karanpur East 82.40 46.80 21.30 150.50 Shakti North 74.20 52.60 28.10 154.90 Nandini Extension 61.80 39.40 19.70 120.90 Surya South 96.30 57.20 31.40 184.90 TOTAL 314.70 196.00 100.50 611.20 Validation rule: For each block, Total Resource should equal Measured + Indicated + Inferred. The prototype should flag any record that violates this relationship."
+  },
+  {
+    "chunk_id": "DOC-98003_p4_c4",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 4,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 4 8. COAL QUALITY ANALYSIS Block Moisture % Ash % VM % GCV (kcal/kg) Sulphur % Karanpur East 6.8 24.6 27.2 4,980 0.48 Shakti North 7.2 22.9 26.8 5,140 0.42 Nandini Extension 6.5 28.4 25.9 4,720 0.51 Surya South 7.0 21.7 28.1 5,260 0.39 Quality observations indicate variation between exploration blocks. For prototype testing, the AI system should be able to retrieve the block with the highest illustrative GCV, compare ash percentages, and explain the result using the table as evidence. 9. EXPLORATION EXPENDITURE Activity Budget (I lakh) Actual (I lakh) Variance (I lakh) Utilisation % Drilling 1,480 1,522 +42 102.84 Geological Mapping 265 251 -14 94.72 Laboratory Analysis 118 124 +6 105.08 Core Processing 96 91 -5 94.79 Data Processing 74 79 +5 106.76 TOTAL 2,033 2,067 +34 101.67 10. HISTORICAL COMPARISON Indicator 2022\u201323 2023\u201324 2024\u201325 Change vs 2023\u201324 Drilling (m) 14,920 16,740 18,460 +10.27% Boreholes 82 91 101 +10.99% Core Recovery % 88.7 90.2 91.3 +1.1 pp Samples 510 574 648 +12.89% Estimated Resources (Mt) 488.5 552.7 611.2 +10.59% 11. MAJOR FINDINGS The illustrative exploration programme indicates increased drilling activity compared with the previous two reporting periods. The largest individual drilling contribution in the current test dataset is associated with Surya South. Resource estimates show variation in the relative proportions of measured, indicated and inferred categories. Coal quality parameters also vary among blocks. The prototype should not merely summarize this section. It should independently calculate findings from the underlying tables and identify whether the narrative agrees with the structured data. 12. CHALLENGES OBSERVED DURING EXPLORATION Illustrative operational challenges included delays in access to selected drill locations, weather-related interruptions, variation in core recovery, differences in historical document formats and delays in receiving laboratory results. These statements are synthetic test content and are intended to test topic extraction and classification. 13. RECOMMENDATIONS Future exploration programmes may prioritize areas with insufficient geological confidence, improve digital capture of borehole information, standardize data dictionaries, increase structured storage of laboratory results and establish consistent document templates across reporting cycles. For the AI prototype, standardized metadata and controlled vocabularies should be maintained alongside the original documents. 14. ANNEXURE A \u2014 BOREHOLE DETAIL SAMPLE BH ID Block Depth (m) Coal Seam Thickness (m) Recovery % KE-01 Karanpur East 182.4 A 2.74 92.1 KE-02 Karanpur East 194.8 B 3.42 90.8 KE-03 Karanpur East 176.2 D 4.02 91.7 SN-01 Shakti North 185.6 A 2.91 88.9 SN-02 Shakti North 179.3 B 3.18 90.4"
+  },
+  {
+    "chunk_id": "DOC-98003_p5_c5",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 5,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 5 BH ID Block Depth (m) Coal Seam Thickness (m) Recovery % NE-01 Nandini Extension 181.7 C 1.86 94.2 SS-01 Surya South 177.9 D 4.28 91.1 SS-02 Surya South 183.4 B 3.54 89.7 15. ANNEXURE B \u2014 LABORATORY SAMPLE SUMMARY Sample ID Block Seam Ash % Moisture % GCV kcal/kg LAB-001 Karanpur East A 24.1 6.7 5,020 LAB-002 Karanpur East B 23.8 6.9 5,080 LAB-003 Shakti North B 22.4 7.1 5,190 LAB-004 Nandini Extension C 28.9 6.4 4,680 LAB-005 Surya South D 21.3 7.0 5,310 LAB-006 Surya South B 21.9 7.1 5,220"
+  },
+  {
+    "chunk_id": "DOC-98003_p6_c6",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 6,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 6 16. INTENTIONAL TEST CASES FOR AI VALIDATION The following records are deliberately included to test whether the prototype can detect contradictions rather than blindly repeat information. Test ID Issue Expected System Behaviour VAL-001 Shakti North planned drilling = 5,100 m but achieved = 4,920 m. Calculate achievement below 100% and flag as below plan. VAL-002 Nandini Extension resource values sum to 120.90 Mt. Confirm Total = Measured + Indicated + Inferred. VAL-003 Annual drilling total = 18,460 m; block totals should sum to the same value. Cross-check total and flag if mismatch. VAL-004 Quality table has different GCV values by block. Answer comparison questions from the source table, not from assumptions. VAL-005 Historical resource values differ by year. Retrieve the correct reporting period before answering. 17. SAMPLE QUESTIONS TO ASK YOUR AI SYSTEM Q1. What was the total drilling achieved during 2024\u201325? Q2. Which block achieved the highest drilling metres? Q3. Which block had drilling below its planned target? Q4. What was the total illustrative resource estimated in 2024\u201325? Q5. Break down the total resource into measured, indicated and inferred categories. Q6. Which block had the highest illustrative GCV? Q7. What was the average core recovery across all blocks? Q8. How did drilling change between 2023\u201324 and 2024\u201325? Q9. Which exploration activity had the highest utilisation percentage? Q10. Generate an executive summary based only on the information contained in this document. Q11. Show the page/table evidence supporting the answer. Q12. Identify any inconsistencies in the report. 18. EXPECTED AI EXTRACTION FIELDS Category Fields Document Report title, reporting year, reference number, document type, organisation Project/Block Block name, state/region, area, exploration status Drilling Planned metres, achieved metres, boreholes, average depth, recovery Geology Seam name, thickness, continuity, lithology-related terms Resources Measured, indicated, inferred, total Quality Moisture, ash, volatile matter, GCV, sulphur Finance Budget, actual expenditure, variance, utilisation Historical Year, indicator, value, percentage change Provenance Page number, section, table number, source text 19. PROTOTYPE TESTING CHECKLIST Test Status Result / Notes PDF text extraction Not Run OCR extraction Not Run Table extraction Not Run Numerical field extraction Not Run Unit recognition Not Run Cross-table validation Not Run Semantic search Not Run RAG question answering Not Run Source citation Not Run Word cloud generation Not Run Topic identification Not Run Automated report generation Not Run Accuracy benchmark Not Run"
+  },
+  {
+    "chunk_id": "DOC-98003_p7_c7",
+    "document_id": "DOC-98003",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
+    "page": 7,
+    "text": "PROTOTYPE TEST DATA \u2014 NOT AN OFFICIAL CMPDI/CIL DOCUMENT Page 7 END OF SYNTHETIC TEST REPORT Use this document as an upload/input file for the SIH 26023 prototype. It is intentionally not an official CMPDI/CIL document."
+  },
+  {
+    "chunk_id": "DOC-99206_p1_c1",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 1,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 1 CMPDI ANNUAL GEOLOGICAL EXPLORATION REPORT FY 2024\u201325 \u2014 TEST / SYNTHETIC DATASET Prototype document for testing GeoMine AI This document is intentionally synthetic and is not an official report of CMPDI, Coal India Limited, or any subsidiary. It is designed to test OCR, table extraction, structured data extraction, validation, RAG retrieval, source citations, analytics, word clouds, and automated report generation. Test Metadata Value Document ID TEST-CMPDI-GEO-2025-001 Reporting Period FY 2024\u201325 Organization CMPDI (Synthetic Demo) Primary Area Geological Exploration & Mining Data Expected Pages 20 Contains OCR Test Pages Yes \u2014 selected pages are image-rendered Contains Validation Test Yes \u2014 one deliberate value conflict"
+  },
+  {
+    "chunk_id": "DOC-99206_p2_c2",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 2,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 2 1. Executive Summary This synthetic annual report summarizes geological exploration, drilling activity, resource assessment, mine-block observations, and selected production indicators for FY 2024\u201325. The dataset is designed for software testing and does not represent real operational results. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p3_c3",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 3,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 3 2. Exploration Programme Exploration activities in this test dataset cover reconnaissance, geological mapping, exploratory drilling, coal quality sampling, and preliminary resource interpretation. The objective is to provide varied terminology and numerical fields for extraction testing. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p4_c4",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 4,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 4 3. Geological Mapping The synthetic exploration blocks contain stratigraphic observations, seam continuity notes, structural interpretation, and lithological descriptions. Coordinates and quantities below are fictional and included only to test structured extraction. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p5_c5",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 5,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 5 4. Exploratory Drilling Drilling records include borehole identifiers, depth, drilling meterage, coal intercepts, and completion status. Page-level values are intentionally varied so the extraction pipeline can test numeric and unit normalization. Borehole Depth (m) Coal Intercept (m) Drilling Meterage (m) Status BH-01 312.4 8.6 312.4 Completed BH-02 287.1 6.2 287.1 Completed BH-03 341.8 10.4 341.8 Completed BH-04 265.5 5.9 265.5 Completed Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p6_c6",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 6,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 6 5. Resource Assessment Synthetic resource estimates are provided in million tonnes. Categories are intentionally separated into measured, indicated, and inferred values to test field extraction. Block Measured (MT) Indicated (MT) Inferred (MT) Total (MT) Block A 42.8 18.4 9.2 70.4 Block B 31.5 22.7 11.8 66.0 Block C 18.6 15.2 7.5 41.3 Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p7_c7",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 7,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 7 6. Coal Quality Coal quality records contain GCV, ash, moisture, and grade-like labels. These values are synthetic and should be treated as test data only. Sample GCV (kcal/kg) Ash (%) Moisture (%) Grade Label CQ-01 4820 18.2 5.4 G10 CQ-02 4650 19.1 5.8 G11 CQ-03 5010 16.7 4.9 G9 CQ-04 4520 20.2 6.1 G12 Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p8_c8",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 8,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 8 7. Mine Production Indicators Selected production and overburden indicators are included so the prototype can test historical comparison, target-versus-achievement calculations, and chart generation. Parameter / Mine Block Target FY25 Achieved FY25 Unit Integrity Check Coal Production (Opencast) 185.00 181.20 Million Tonnes (MT) PASS Overburden Removal (OBR) 250.00 245.80 Million Cu. M (MCM) PASS Exploratory Core Drilling 2.20 2.45 Lakh Meters PASS Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p9_c9",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 9,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 9 8. Environmental Observations Synthetic observations include reclamation, water management, dump stability monitoring, and vegetation restoration. These terms are useful for topic identification and word-cloud tests. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p10_c10",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 10,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 10 9. Safety Observations The test dataset includes generic safety observations and corrective-action descriptions. These records are intentionally non-sensitive and fictional. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p11_c11",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 11,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 11 10. Land & Infrastructure Synthetic land and infrastructure notes cover access roads, drilling platforms, survey control points, and utility requirements. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p12_c12",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 12,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 12 11. Historical Comparison A five-year synthetic series is included for testing time-series extraction and trend visualization. Values should be read from the tables rather than inferred from this narrative. FY Production (MT) OBR (MCM) Exploration Drilling (Lakh m) 2020\u201321 162.4 218.5 1.82 2021\u201322 168.7 225.1 1.94 2022\u201323 174.9 231.6 2.05 2023\u201324 178.3 239.2 2.20 2024\u201325 181.2 245.8 2.45 Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p13_c13",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 13,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 13 12. Data Lineage Each key numerical table is associated with a section and page. The application should preserve this source relationship when extracting values and answering questions. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p14_c14",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 14,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 14 13. Parliamentary Query Test Material This section provides questions that can be used to test retrieval: What was the FY 2024\u201325 production? What drilling meterage was completed? What resource estimate was reported? Answers must cite the relevant page. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p15_c15",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 15,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 15 14. Document Classification The report includes geological, production, environmental, and administrative terminology. A topic model should identify these categories from the actual text. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p16_c16",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 16,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 16 15. Extraction Test Notes This section contains repeated numerical terminology and units to test OCR and structured extraction robustness. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p17_c17",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 17,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 17 16. Validation Test One table on this page contains a deliberately inconsistent value. The system should flag the conflict rather than silently selecting a value. Parameter Document A Document B Expected System Action Coal Production FY25 181.20 MT 181.20 MT No conflict OBR FY25 245.80 MCM 245.80 MCM No conflict Core Drilling 2.45 Lakh m 2.54 Lakh m FLAG CONFLICT Validation test: The core drilling value is deliberately inconsistent across two synthetic source records. A correct implementation should flag this discrepancy. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p18_c18",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 18,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 18 17. RAG Retrieval Test Use the questions below to test semantic retrieval and page citations. The expected answer must be grounded only in this synthetic report. Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p19_c19",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 19,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 19 18. Report Generation Test Use the extracted data to generate a summary report containing tables, trends, observations, and source references. Test Question Expected Source What was FY25 coal production? Page 8 What was FY25 overburden removal? Page 8 How much core drilling was completed? Pages 5 and 17 What was Block A total resource? Page 6 What was the GCV of sample CQ-03? Page 7 Synthetic test note: Values on this page are fictional and exist only to exercise document-processing, OCR, extraction, validation, and RAG functionality."
+  },
+  {
+    "chunk_id": "DOC-99206_p20_c20",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 20,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 20 19. Dataset Dictionary The following fields are intended to be mapped into structured storage: mine_name, financial_year, production, production_unit, overburden, drilling_meterage, gcv, reserves, resources, and source_page."
+  },
+  {
+    "chunk_id": "DOC-99206_p21_c21",
+    "document_id": "DOC-99206",
+    "document_name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+    "page": 21,
+    "text": "SYNTHETIC DEMO DATA \u2014 NOT AN OFFICIAL CMPDI/CIL REPORT Page 21 20. Final Test Checklist Expected system actions: upload, classify, OCR, extract text, extract tables, validate, index, retrieve, answer with citations, create analytics, generate a report, and preserve lineage."
+  },
+  {
+    "chunk_id": "DOC-03365_p1_c1",
+    "document_id": "DOC-03365",
+    "document_name": "ChatGPT Image Sep 21, 2026, 08_39_15 PM.png",
+    "page": 1,
+    "text": "[OCR Extracted Content Page 1]: High density geological log record for mine command area. Coal seam thickness logged at 8.4 meters. GCV Grade: G10."
+  },
+  {
+    "chunk_id": "DOC-05858_p1_c1",
+    "document_id": "DOC-05858",
+    "document_name": "GeoMine_REP-1790005259.pdf",
+    "page": 1,
+    "text": "CENTRAL MINE PLANNING & DESIGN INSTITUTE (CMPDI) A Subsidiary of Coal India Limited | Ministry of Coal, Govt. of India Geological Exploration & Production Performance Brief Subsidiary: CMPDI | Ref No: REP-1790005259 1. Executive Summary & AI Findings This report compiles multi-source geological exploration data, core drill logs, and production metrics verified through GeoMine AI Validation Engine. Figures have been cross-checked against database records. 2. Verified Production & Exploration Figures Parameter FY23-24 (MT) FY24-25 (MT) YoY Growth Status CMPDI Coal Production 181 MT 195 MT +7.7% Verified Total CIL Overall Production 773.6 MT 838 MT +8.3% Audited CMPDI Exploratory Drilling 16.8 L m 18.5 L m +10.1% Exceeded"
+  }
+]
