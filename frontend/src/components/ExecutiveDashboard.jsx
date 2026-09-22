@@ -229,8 +229,7 @@ export default function ExecutiveDashboard({ selectedSubsidiary, setActiveTab })
           onClick={() => setActiveTab('report-generator')}
           className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-blue-300 transition cursor-pointer space-y-2 group"
         >
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Module 1</span>
+          <div className="flex justify-end">
             <ArrowUpRight className="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
           </div>
           <h3 className="font-bold text-base text-slate-900 font-heading">Automated Report Generator</h3>
@@ -243,8 +242,7 @@ export default function ExecutiveDashboard({ selectedSubsidiary, setActiveTab })
           onClick={() => setActiveTab('word-cloud')}
           className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-blue-300 transition cursor-pointer space-y-2 group"
         >
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Module 2</span>
+          <div className="flex justify-end">
             <ArrowUpRight className="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
           </div>
           <h3 className="font-bold text-base text-slate-900 font-heading">Word Cloud & Topic Extractor</h3>
@@ -257,8 +255,7 @@ export default function ExecutiveDashboard({ selectedSubsidiary, setActiveTab })
           onClick={() => setActiveTab('parliamentary-rag')}
           className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-blue-300 transition cursor-pointer space-y-2 group"
         >
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Module 3</span>
+          <div className="flex justify-end">
             <ArrowUpRight className="w-4 h-4 text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
           </div>
           <h3 className="font-bold text-base text-slate-900 font-heading">AI Assistant & RAG Query</h3>

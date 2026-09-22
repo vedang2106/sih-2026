@@ -15,9 +15,9 @@ export default function Sidebar({ activeTab, setActiveTab }) {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, badge: null },
     { id: 'digitization', label: 'Documents & OCR', icon: FileSearch, badge: 'Pipeline' },
-    { id: 'report-generator', label: 'Report Generator', icon: FileText, badge: 'Module 1' },
-    { id: 'word-cloud', label: 'Word Cloud & Topics', icon: CloudRain, badge: 'Module 2' },
-    { id: 'parliamentary-rag', label: 'AI Assistant & RAG', icon: MessageSquareCode, badge: 'Module 3' },
+    { id: 'report-generator', label: 'Report Generator', icon: FileText, badge: null },
+    { id: 'word-cloud', label: 'Word Cloud & Topics', icon: CloudRain, badge: null },
+    { id: 'parliamentary-rag', label: 'AI Assistant & RAG', icon: MessageSquareCode, badge: null },
     { id: 'impact-metrics', label: 'Evaluation & Health', icon: BarChart3, badge: 'Measured' },
   ];
 

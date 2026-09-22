@@ -91,9 +91,6 @@ export default function ReportGeneratorModule({ selectedSubsidiary }) {
       <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 font-bold text-xs border border-blue-100">
-              Module 1
-            </span>
             <h2 className="text-xl font-bold text-slate-900 font-heading">Automated Report Generator</h2>
           </div>
           <p className="text-xs text-slate-600 mt-1">
