@@ -173,39 +173,41 @@ export default function DigitizationModule({ selectedSubsidiary }) {
                 <div
                   key={doc.id}
                   onClick={() => setSelectedDoc(doc)}
-                  className={`p-3.5 rounded-xl border transition cursor-pointer ${
+                  className={`p-3.5 rounded-xl border transition cursor-pointer min-w-0 overflow-hidden ${
                     isSelected
                       ? 'bg-blue-50 border-blue-300 text-blue-900 shadow-xs'
                       : 'bg-white border-slate-200 hover:border-slate-300 text-slate-800'
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-start justify-between gap-2 min-w-0">
+                    <div className="flex items-center gap-2 min-w-0 overflow-hidden">
                       <FileText className={`w-4 h-4 shrink-0 ${isSelected ? 'text-blue-600' : 'text-slate-400'}`} />
-                      <span className="font-semibold text-xs line-clamp-1">{doc.name}</span>
+                      <span className="font-semibold text-xs truncate min-w-0" title={doc.name}>
+                        {doc.name}
+                      </span>
                     </div>
                     <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 shrink-0">
                       {doc.type}
                     </span>
                   </div>
 
-                  <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500">
-                    <span>{doc.subsidiary} • {doc.pages || 1} Pages</span>
+                  <div className="mt-2 flex flex-wrap items-center justify-between gap-1 text-[11px] text-slate-500 min-w-0">
+                    <span className="truncate min-w-0">{doc.subsidiary} • {doc.pages || 1} Pages</span>
                     {doc.isUserUploaded || doc.name?.startsWith('GeoMine_REP-') || doc.name?.startsWith('ChatGPT Image') ? (
-                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
+                      <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 shrink-0">
                         ● Dynamic User Data
                       </span>
                     ) : (
-                      <span className="text-[9px] font-semibold uppercase px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                      <span className="text-[9px] font-semibold uppercase px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 shrink-0">
                         ● Static Baseline PDF
                       </span>
                     )}
                   </div>
 
                   {doc.anomaliesFound > 0 && (
-                    <div className="mt-2 flex items-center gap-1.5 text-[10px] text-amber-700 font-medium">
+                    <div className="mt-2 flex items-center gap-1.5 text-[10px] text-amber-700 font-medium min-w-0">
                       <AlertTriangle className="w-3 h-3 text-amber-600 shrink-0" />
-                      <span>{doc.anomaliesFound} Consistency Rule Triggered</span>
+                      <span className="truncate">{doc.anomaliesFound} Consistency Rule Triggered</span>
                     </div>
                   )}
                 </div>

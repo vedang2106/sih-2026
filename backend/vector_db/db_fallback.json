@@ -1,6 +1,68 @@
 {
   "documents": [
     {
+      "id": "DOC-95256",
+      "name": "SIH_26023_AI_Geological_Mining_Reporting_Prototype_Testing_Document.pdf",
+      "type": "PDF",
+      "size": "0.0 MB",
+      "pages": 10,
+      "uploadDate": "2026-09-22",
+      "subsidiary": "NCL",
+      "category": "Mining & Exploration",
+      "ocrStatus": "Parsed (Direct Text)",
+      "extractedTables": 10,
+      "confidence": 99.6,
+      "extracted_rows": [
+        {
+          "parameter": "Sih Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Ent Smart India Hackathon",
+          "value": "2026",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Ries Problem Statement Id",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Sih Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Data Testing Document",
+          "value": "1.",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Summary Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        }
+      ],
+      "anomaliesFound": 0,
+      "tags": [
+        "Uploaded",
+        "WCL"
+      ]
+    },
+    {
       "id": "DOC-05858",
       "name": "GeoMine_REP-1790005259.pdf",
       "type": "PDF",
@@ -120,6 +182,60 @@
     }
   ],
   "extracted_data": [
+    {
+      "filename": "SIH_26023_AI_Geological_Mining_Reporting_Prototype_Testing_Document.pdf",
+      "subsidiary": "NCL",
+      "mine_name": "Normalized Into Text Block",
+      "financial_year": "2024-25",
+      "extracted_rows": [
+        {
+          "parameter": "Sih Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Ent Smart India Hackathon",
+          "value": "2026",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Ries Problem Statement Id",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 1,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Sih Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Data Testing Document",
+          "value": "1.",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Summary Problem Statement",
+          "value": "26023",
+          "unit": "MT/Unit",
+          "page": 2,
+          "status": "Verified"
+        }
+      ],
+      "total_fields": 34,
+      "confidence": 99.6,
+      "source_page": 1,
+      "document_id": "DOC-95256"
+    },
     {
       "filename": "GeoMine_REP-1790005259.pdf",
       "subsidiary": "CMPDI",

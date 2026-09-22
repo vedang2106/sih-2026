@@ -6,19 +6,17 @@ import {
   CloudRain, 
   MessageSquareCode, 
   BarChart3, 
-  Layers, 
-  Database,
-  Activity
+  Layers
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, badge: null },
-    { id: 'digitization', label: 'Documents & OCR', icon: FileSearch, badge: 'Pipeline' },
+    { id: 'digitization', label: 'Documents & OCR', icon: FileSearch, badge: null },
     { id: 'report-generator', label: 'Report Generator', icon: FileText, badge: null },
     { id: 'word-cloud', label: 'Word Cloud & Topics', icon: CloudRain, badge: null },
     { id: 'parliamentary-rag', label: 'AI Assistant & RAG', icon: MessageSquareCode, badge: null },
-    { id: 'impact-metrics', label: 'Evaluation & Health', icon: BarChart3, badge: 'Measured' },
+    { id: 'impact-metrics', label: 'Evaluation & Health', icon: BarChart3, badge: null },
   ];
 
   return (
@@ -63,20 +61,6 @@ export default function Sidebar({ activeTab, setActiveTab }) {
               );
             })}
           </nav>
-        </div>
-
-        {/* Database Repository Info Box */}
-        <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-800">
-            <span className="flex items-center gap-1.5">
-              <Database className="w-3.5 h-3.5 text-blue-600" />
-              <span>MongoDB & Vector DB</span>
-            </span>
-            <span className="text-[10px] text-emerald-700 font-mono font-bold">Indexed</span>
-          </div>
-          <p className="text-[11px] text-slate-500 leading-relaxed">
-            Multi-modal document store, ChromaDB semantic embeddings & line-item audit trail.
-          </p>
         </div>
 
       </div>

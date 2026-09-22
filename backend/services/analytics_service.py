@@ -23,7 +23,7 @@ def get_measured_analytics(subsidiary: str = "ALL") -> Dict[str, Any]:
     docs = db_manager.get_documents(subsidiary)
     extracted = db_manager.get_extracted_fields()
 
-    doc_count = len(docs)
+    doc_count = len(docs)  
     total_pages = sum(d.get("pages", d.get("page_count", 1)) for d in docs)
     fields_count = sum(len(d.get("extracted_rows", [])) for d in docs) if docs else len(extracted) * 6
 
