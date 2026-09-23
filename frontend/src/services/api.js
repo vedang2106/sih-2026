@@ -1,6 +1,9 @@
 // GeoMine AI - Central FastAPI API Service Client
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-const DEFAULT_TIMEOUT_MS = 5000; // 5s timeout to ensure fast responsiveness & quick fallback
+const DEFAULT_TIMEOUT_MS = 5000;
+
+let isConnected = false;
+let monitorInterval = null;
 
 async function fetchWithTimeout(resource, options = {}) {
   const { timeout = DEFAULT_TIMEOUT_MS, ...fetchOptions } = options;
@@ -12,6 +15,12 @@ async function fetchWithTimeout(resource, options = {}) {
       signal: controller.signal
     });
     clearTimeout(id);
+    if (!isConnected) {
+      isConnected = true;
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('geomine-backend-connected'));
+      }
+    }
     return response;
   } catch (error) {
     clearTimeout(id);
@@ -40,9 +49,15 @@ export const api = {
     const res = await fetchWithTimeout(`${API_BASE_URL}/api/documents/upload`, {
       method: 'POST',
       body: formData,
-      timeout: 30000 // File upload allowed up to 30s
+      timeout: 30000
     });
-    return handleResponse(res);
+    const data = await handleResponse(res);
+    
+    // Broadcast document update event globally
+    if (typeof window !== 'undefined' && data && data.document) {
+      window.dispatchEvent(new CustomEvent('geomine-document-updated', { detail: data.document }));
+    }
+    return data;
   },
 
   async getDocuments(subsidiary = 'ALL') {
@@ -126,6 +141,31 @@ export const api = {
   async getHealth() {
     const res = await fetchWithTimeout(`${API_BASE_URL}/api/health`, { timeout: 3000 });
     return handleResponse(res);
+  },
+
+  // Background monitor to auto-detect when FastAPI backend comes online
+  startAutoConnectMonitor() {
+    if (typeof window === 'undefined' || monitorInterval) return;
+    
+    const check = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/health`, { method: 'GET' });
+        if (res.ok) {
+          if (!isConnected) {
+            isConnected = true;
+            window.dispatchEvent(new CustomEvent('geomine-backend-connected'));
+          }
+        }
+      } catch (e) {
+        isConnected = false;
+      }
+    };
+    check();
+    monitorInterval = setInterval(check, 4000);
   }
 };
 
+// Start connection monitor on script load
+if (typeof window !== 'undefined') {
+  api.startAutoConnectMonitor();
+}

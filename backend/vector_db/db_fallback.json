@@ -1,68 +1,6 @@
 {
   "documents": [
     {
-      "id": "DOC-95256",
-      "name": "SIH_26023_AI_Geological_Mining_Reporting_Prototype_Testing_Document.pdf",
-      "type": "PDF",
-      "size": "0.0 MB",
-      "pages": 10,
-      "uploadDate": "2026-09-22",
-      "subsidiary": "NCL",
-      "category": "Mining & Exploration",
-      "ocrStatus": "Parsed (Direct Text)",
-      "extractedTables": 10,
-      "confidence": 99.6,
-      "extracted_rows": [
-        {
-          "parameter": "Sih Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Ent Smart India Hackathon",
-          "value": "2026",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Ries Problem Statement Id",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Sih Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Data Testing Document",
-          "value": "1.",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Summary Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        }
-      ],
-      "anomaliesFound": 0,
-      "tags": [
-        "Uploaded",
-        "WCL"
-      ]
-    },
-    {
       "id": "DOC-05858",
       "name": "GeoMine_REP-1790005259.pdf",
       "type": "PDF",
@@ -76,64 +14,16 @@
       "confidence": 95.0,
       "extracted_rows": [
         {
-          "parameter": "Tus Cmpdi Coal Production",
-          "value": "181",
-          "unit": "MT",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Al Cil Overall Production",
+          "parameter": "CIL Overall Raw Coal Production",
           "value": "773.6",
           "unit": "MT",
           "page": 1,
           "status": "Verified"
         },
         {
-          "parameter": "Mpdi Exploratory Drilling",
+          "parameter": "CMPDI Exploratory Drilling",
           "value": "16.8",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "L M",
-          "value": "18.5",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        }
-      ],
-      "anomaliesFound": 0,
-      "tags": [
-        "Uploaded",
-        "CMPDI"
-      ]
-    },
-    {
-      "id": "DOC-03365",
-      "name": "ChatGPT Image Sep 21, 2026, 08_39_15 PM.png",
-      "type": "PNG",
-      "size": "1.8 MB",
-      "pages": 1,
-      "uploadDate": "2026-09-21",
-      "subsidiary": "CMPDI",
-      "category": "Mining & Exploration",
-      "ocrStatus": "Completed (100%)",
-      "extractedTables": 1,
-      "confidence": 90.0,
-      "extracted_rows": [
-        {
-          "parameter": "Cr Extracted Content Page",
-          "value": "1",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Seam Thickness Logged At",
-          "value": "8.4",
-          "unit": "METERS",
+          "unit": "Lakh Meters",
           "page": 1,
           "status": "Verified"
         }
@@ -146,9 +36,9 @@
     },
     {
       "id": "DOC-99206",
-      "name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA(1) (1).pdf",
+      "name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
       "type": "PDF",
-      "size": "0.0 MB",
+      "size": "0.1 MB",
       "pages": 21,
       "uploadDate": "2026-03-21",
       "subsidiary": "CMPDI",
@@ -156,24 +46,22 @@
       "ocrStatus": "Parsed (Direct Text)",
       "extractedTables": 21,
       "confidence": 98.6,
-      "anomaliesFound": 0,
-      "tags": [
-        "Uploaded",
-        "CMPDI"
-      ]
-    },
-    {
-      "id": "DOC-98003",
-      "name": "CMPDI_Annual_Geological_Exploration_Report_TEST_DATA.pdf",
-      "type": "PDF",
-      "size": "0.0 MB",
-      "pages": 7,
-      "uploadDate": "2026-03-21",
-      "subsidiary": "CMPDI",
-      "category": "Mining & Exploration",
-      "ocrStatus": "Parsed (Direct Text)",
-      "extractedTables": 7,
-      "confidence": 98.6,
+      "extracted_rows": [
+        {
+          "parameter": "CMPDI Exploratory Drilling Meterage",
+          "value": "18.50",
+          "unit": "Lakh Meters",
+          "page": 12,
+          "status": "Verified"
+        },
+        {
+          "parameter": "Jharia Deep Prime Coking Reserves",
+          "value": "840.00",
+          "unit": "Million Tonnes",
+          "page": 18,
+          "status": "Verified"
+        }
+      ],
       "anomaliesFound": 0,
       "tags": [
         "Uploaded",
@@ -181,160 +69,7 @@
       ]
     }
   ],
-  "extracted_data": [
-    {
-      "filename": "SIH_26023_AI_Geological_Mining_Reporting_Prototype_Testing_Document.pdf",
-      "subsidiary": "NCL",
-      "mine_name": "Normalized Into Text Block",
-      "financial_year": "2024-25",
-      "extracted_rows": [
-        {
-          "parameter": "Sih Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Ent Smart India Hackathon",
-          "value": "2026",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Ries Problem Statement Id",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Sih Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Data Testing Document",
-          "value": "1.",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Summary Problem Statement",
-          "value": "26023",
-          "unit": "MT/Unit",
-          "page": 2,
-          "status": "Verified"
-        }
-      ],
-      "total_fields": 34,
-      "confidence": 99.6,
-      "source_page": 1,
-      "document_id": "DOC-95256"
-    },
-    {
-      "filename": "GeoMine_REP-1790005259.pdf",
-      "subsidiary": "CMPDI",
-      "mine_name": "Central Mine",
-      "financial_year": "2024-25",
-      "extracted_rows": [
-        {
-          "parameter": "Tus Cmpdi Coal Production",
-          "value": "181",
-          "unit": "MT",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Al Cil Overall Production",
-          "value": "773.6",
-          "unit": "MT",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Mpdi Exploratory Drilling",
-          "value": "16.8",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "L M",
-          "value": "18.5",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        }
-      ],
-      "total_fields": 4,
-      "confidence": 95.0,
-      "source_page": 1,
-      "document_id": "DOC-05858"
-    },
-    {
-      "filename": "ChatGPT Image Sep 21, 2026, 08_39_15 PM.png",
-      "subsidiary": "CMPDI",
-      "mine_name": "Gical Log Record For Mine",
-      "financial_year": "2024-25",
-      "extracted_rows": [
-        {
-          "parameter": "Cr Extracted Content Page",
-          "value": "1",
-          "unit": "MT/Unit",
-          "page": 1,
-          "status": "Verified"
-        },
-        {
-          "parameter": "Seam Thickness Logged At",
-          "value": "8.4",
-          "unit": "METERS",
-          "page": 1,
-          "status": "Verified"
-        }
-      ],
-      "total_fields": 2,
-      "confidence": 90.0,
-      "source_page": 1,
-      "document_id": "DOC-03365"
-    },
-    {
-      "mine_name": " Geological Mapping The Synthetic Exploration Block",
-      "company": "Coal India Limited",
-      "subsidiary": "NCL",
-      "financial_year": "2025-00",
-      "production": null,
-      "production_unit": "MT",
-      "coal_grade": null,
-      "gcv": null,
-      "overburden": null,
-      "overburden_unit": "MCM",
-      "exploration_drilling": 2.45,
-      "source_page": 1,
-      "confidence": 0.98,
-      "document_id": "DOC-99206"
-    },
-    {
-      "mine_name": "Bearing Block",
-      "company": "Coal India Limited",
-      "subsidiary": "NCL",
-      "financial_year": "2025-02",
-      "production": null,
-      "production_unit": "MT",
-      "coal_grade": null,
-      "gcv": null,
-      "overburden": null,
-      "overburden_unit": "MCM",
-      "exploration_drilling": null,
-      "source_page": 1,
-      "confidence": 0.98,
-      "document_id": "DOC-98003"
-    }
-  ],
+  "extracted_data": [],
   "validation_errors": [],
   "reports": [],
   "chat_history": []

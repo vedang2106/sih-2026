@@ -278,5 +278,12 @@
     "document_name": "SIH_26023_AI_Geological_Mining_Reporting_Prototype_Testing_Document.pdf",
     "page": 10,
     "text": "SIH Problem Statement 26023 | Prototype & Real-Data Testing Document Appendix A \u2014 Initial Test Case Template Test ID Input Expected Output Actual Output Status Evidence TC-01 Not Run TC-02 Not Run TC-03 Not Run TC-04 Not Run TC-05 Not Run TC-06 Not Run TC-07 Not Run TC-08 Not Run TC-09 Not Run TC-10 Not Run Appendix B \u2014 Benchmark Result Template Metric Baseline Prototype Improvement Notes Report preparation time Field extraction accuracy Numerical accuracy Validation detection rate Q&A; groundedness Automation rate"
+  },
+  {
+    "chunk_id": "DOC-83656_p7_c1",
+    "document_id": "DOC-83656",
+    "document_name": "02. Focus Area Problem Statement Title (1).pdf",
+    "page": 7,
+    "text": "\u0000Demo Video Link \ue894 Live Website Link Share avideo walkthroughordemonstration showing your working solution in action. ProvideaURL tothelive deployment, interactive web application, or prototype preview. https://www.awesomescreenshot.com/video/5 6236250? key=b318fa10a33b7f327bb0894903422333 https://eventflow-ai- tau.vercel.app/ Supplementary Information"
   }
 ]
