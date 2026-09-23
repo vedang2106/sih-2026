@@ -11,10 +11,30 @@ import {
 } from 'lucide-react';
 
 export default function WordCloudModule({ selectedSubsidiary }) {
-  const [topics, setTopics] = useState(WORD_CLOUD_TOPICS);
+  const formatTopicText = (text) => {
+    if (!text) return '';
+    const cleaned = text.replace(/\.pdf$/i, '').replace(/_/g, ' ').replace(/-/g, ' ').trim();
+    return cleaned.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase());
+  };
+
+  const deduplicateTopics = (list) => {
+    const seen = new Set();
+    const uniqueList = [];
+    for (const item of list) {
+      const formatted = formatTopicText(item.text).toLowerCase().trim();
+      if (formatted && !seen.has(formatted)) {
+        seen.add(formatted);
+        uniqueList.push(item);
+      }
+    }
+    return uniqueList;
+  };
+
+  const initialTopics = deduplicateTopics(WORD_CLOUD_TOPICS);
+  const [topics, setTopics] = useState(initialTopics);
   const [targetCategory, setTargetCategory] = useState('ALL');
   const [minWeight, setMinWeight] = useState(70);
-  const [selectedTopic, setSelectedTopic] = useState(WORD_CLOUD_TOPICS[0]);
+  const [selectedTopic, setSelectedTopic] = useState(initialTopics[0]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
@@ -24,30 +44,34 @@ export default function WordCloudModule({ selectedSubsidiary }) {
         if (isMounted) {
           if (res && res.topics && res.topics.length > 0) {
             const apiTopics = res.topics.map(t => ({ ...t, isDynamic: true }));
-            const existing = new Set(apiTopics.map(t => t.text.toLowerCase()));
-            const staticBaseline = WORD_CLOUD_TOPICS.filter(t => !existing.has(t.text.toLowerCase()));
-            const combined = [...apiTopics, ...staticBaseline];
+            const combined = deduplicateTopics([...apiTopics, ...WORD_CLOUD_TOPICS]);
             setTopics(combined);
-            if (!selectedTopic) setSelectedTopic(combined[0]);
+            if (!selectedTopic || !combined.some(t => formatTopicText(t.text) === formatTopicText(selectedTopic.text))) {
+              setSelectedTopic(combined[0]);
+            }
           } else {
-            setTopics(WORD_CLOUD_TOPICS);
-            if (!selectedTopic) setSelectedTopic(WORD_CLOUD_TOPICS[0]);
+            const staticOnly = deduplicateTopics(WORD_CLOUD_TOPICS);
+            setTopics(staticOnly);
+            if (!selectedTopic) setSelectedTopic(staticOnly[0]);
           }
         }
       })
       .catch(() => {
         if (isMounted) {
-          setTopics(WORD_CLOUD_TOPICS);
-          if (!selectedTopic) setSelectedTopic(WORD_CLOUD_TOPICS[0]);
+          const staticOnly = deduplicateTopics(WORD_CLOUD_TOPICS);
+          setTopics(staticOnly);
+          if (!selectedTopic) setSelectedTopic(staticOnly[0]);
         }
       });
     return () => { isMounted = false; };
   }, [selectedSubsidiary, targetCategory]);
 
   const filteredTopics = topics.filter((item) => {
+    const formatted = formatTopicText(item.text);
     const catMatch = targetCategory === 'ALL' || item.category === targetCategory;
     const weightMatch = item.weight >= minWeight;
-    const searchMatch = item.text.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    const searchMatch = formatted.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                        item.text.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         (item.category && item.category.toLowerCase().includes(searchTerm.toLowerCase()));
     return catMatch && weightMatch && searchMatch;
   });
@@ -67,18 +91,8 @@ export default function WordCloudModule({ selectedSubsidiary }) {
     return `${size}px`;
   };
 
-  const formatTopicText = (text) => {
-    if (!text) return '';
-    if (text.includes('ANNUAL_GEOLOGICAL_EXPLORATION_REPORT_TEST_DATA')) {
-      return 'Geological Exploration & Drill Log NLP';
-    }
-    if (text.includes('ANNUAL_GEOLOGICAL_EXPLORATION_REPORT')) {
-      return 'Geological Exploration Report';
-    }
-    return text.replace(/_/g, ' ');
-  };
-
   return (
+
     <div className="space-y-6">
       
       {/* Header */}

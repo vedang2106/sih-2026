@@ -30,14 +30,18 @@ def extract_topics_from_corpus(documents_text: List[str], top_n: int = 20) -> Li
         scores = tfidf_matrix.sum(axis=0).A1
         
         topics: List[Dict[str, Any]] = []
+        seen = set()
         for term, score in zip(feature_names, scores):
-            weight = min(98, int(score * 10 + 65))
-            topics.append({
-                "text": term.upper(),
-                "weight": weight,
-                "category": "Extracted Topic",
-                "count": int(score * 15 + 10)
-            })
+            clean_term = term.strip().upper()
+            if clean_term not in seen and len(clean_term) > 2:
+                seen.add(clean_term)
+                weight = min(98, int(score * 10 + 65))
+                topics.append({
+                    "text": clean_term,
+                    "weight": weight,
+                    "category": "Extracted Topic",
+                    "count": int(score * 15 + 10)
+                })
 
         topics.sort(key=lambda x: x["weight"], reverse=True)
         return topics

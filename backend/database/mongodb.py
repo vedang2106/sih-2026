@@ -39,7 +39,7 @@ class DatabaseManager:
 
         if HAS_PYMONGO:
             try:
-                self.client = pymongo.MongoClient(MONGODB_URI, serverSelectionTimeoutMS=1500)
+                self.client = pymongo.MongoClient(MONGODB_URI, serverSelectionTimeoutMS=800, connectTimeoutMS=800)
                 self.client.admin.command('ping')
                 self.db = self.client[DB_NAME]
                 self.connected = True

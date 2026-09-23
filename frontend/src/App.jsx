@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import ExecutiveDashboard from './components/ExecutiveDashboard';
@@ -9,9 +10,14 @@ import ParliamentaryQAModule from './components/ParliamentaryQAModule';
 import ImpactMetricsModal from './components/ImpactMetricsModal';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedSubsidiary, setSelectedSubsidiary] = useState('ALL');
   const [isMetricsModalOpen, setIsMetricsModalOpen] = useState(false);
+
+  if (isLoading) {
+    return <Preloader onComplete={() => setIsLoading(false)} />;
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
