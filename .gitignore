@@ -22,6 +22,9 @@ venv/
 .venv/
 env/
 .env
+*.env
+backend/.env
+backend/generated_reports/*.pdf
 
 # Storage
 backend/uploads/*

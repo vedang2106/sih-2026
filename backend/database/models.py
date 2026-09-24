@@ -66,3 +66,12 @@ class ReportGenerateRequest(BaseModel):
     report_type: str = "Parliamentary Response"
     summary_text: Optional[str] = None
     table_data: Optional[List[Dict[str, Any]]] = []
+    key_findings: Optional[List[str]] = []
+    recommendations: Optional[List[str]] = []
+
+class AIReportGenerateRequest(BaseModel):
+    doc_ids: List[str] = []
+    user_brief: Optional[str] = ""
+    report_type: Optional[str] = "Parliamentary Response"
+    subsidiary: Optional[str] = "SECL"
+    custom_title: Optional[str] = None

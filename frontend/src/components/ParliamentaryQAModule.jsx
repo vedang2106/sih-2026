@@ -105,7 +105,7 @@ export default function ParliamentaryQAModule({ selectedSubsidiary }) {
       <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h2 className="text-xl font-bold text-slate-900 font-heading">AI Assistant & RAG Query Engine</h2>
+            <h2 className="text-xl font-bold text-slate-900 font-heading">AI Assistant Query Engine</h2>
           </div>
           <p className="text-xs text-slate-600 mt-1">
             ChromaDB vector search & RAG assistant for parliamentary questions and administrative inquiries with page citations.

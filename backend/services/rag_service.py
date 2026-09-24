@@ -62,13 +62,30 @@ def query_rag_engine(question: str, filter_subsidiary: Optional[str] = None) -> 
             "page": page_num,
             "snippet": text_snippet
         })
-        evidence_texts.append(c.get("text", ""))
+        evidence_texts.append(f"[{doc_name}, Page {page_num}]: {c.get('text', '')}")
 
-    combined_evidence = evidence_texts[0][:350]
-    answer_text = (
-        f"Based on official indexed records ({sources[0]['docName']}, Page {sources[0]['page']}): "
-        f"{combined_evidence}..."
-    )
+    combined_evidence = "\n".join(evidence_texts)
+    
+    # Try calling Gemini AI for synthesized answer if API key present
+    import os, requests
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("LLM_API_KEY")
+    answer_text = None
+
+    if api_key:
+        try:
+            prompt = f"You are an AI assistant for Coal India Limited & CMPDI. Answer the question concise and accurately based ONLY on these document excerpts:\n{combined_evidence}\n\nQuestion: {question}"
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+            resp = requests.post(url, json={"contents": [{"parts": [{"text": prompt}]}]}, timeout=6)
+            if resp.status_code == 200:
+                answer_text = resp.json()['candidates'][0]['content']['parts'][0]['text']
+        except Exception:
+            pass
+
+    if not answer_text:
+        answer_text = (
+            f"Based on official indexed records ({sources[0]['docName']}, Page {sources[0]['page']}): "
+            f"{evidence_texts[0][:300]}..."
+        )
 
     return {
         "question": question,

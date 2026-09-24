@@ -8,10 +8,28 @@ export default function Navbar({ selectedSubsidiary, setSelectedSubsidiary, acti
 
   useEffect(() => {
     let isMounted = true;
-    api.getHealth()
-      .then(data => { if (isMounted) setHealth(data); })
-      .catch(() => { if (isMounted) setHealth({ status: 'degraded', backend_api: 'disconnected' }); });
-    return () => { isMounted = false; };
+    const fetchHealth = () => {
+      api.getHealth()
+        .then(data => { if (isMounted) setHealth(data); })
+        .catch(() => { if (isMounted) setHealth({ status: 'degraded', backend_api: 'disconnected' }); });
+    };
+
+    fetchHealth();
+
+    const handleConnect = () => fetchHealth();
+    const handleDisconnect = () => { if (isMounted) setHealth({ status: 'degraded', backend_api: 'disconnected' }); };
+
+    window.addEventListener('geomine-backend-connected', handleConnect);
+    window.addEventListener('geomine-backend-disconnected', handleDisconnect);
+
+    const interval = setInterval(fetchHealth, 4000);
+
+    return () => { 
+      isMounted = false;
+      window.removeEventListener('geomine-backend-connected', handleConnect);
+      window.removeEventListener('geomine-backend-disconnected', handleDisconnect);
+      clearInterval(interval);
+    };
   }, []);
 
   const isConnected = health && (health.status === 'ok' || health.backend_api === 'connected');

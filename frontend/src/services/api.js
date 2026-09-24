@@ -94,6 +94,16 @@ export const api = {
   },
 
   // 3. Reports API
+  async generateAIReport(aiReportConfig) {
+    const res = await fetchWithTimeout(`${API_BASE_URL}/api/reports/generate-ai`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(aiReportConfig),
+      timeout: 25000
+    });
+    return handleResponse(res);
+  },
+
   async generateReport(reportConfig) {
     const res = await fetchWithTimeout(`${API_BASE_URL}/api/reports/generate`, {
       method: 'POST',
@@ -143,7 +153,11 @@ export const api = {
     return handleResponse(res);
   },
 
-  // Background monitor to auto-detect when FastAPI backend comes online
+  isBackendConnected() {
+    return isConnected;
+  },
+
+  // Background monitor to auto-detect when FastAPI backend comes online/offline
   startAutoConnectMonitor() {
     if (typeof window === 'undefined' || monitorInterval) return;
     
@@ -153,15 +167,29 @@ export const api = {
         if (res.ok) {
           if (!isConnected) {
             isConnected = true;
-            window.dispatchEvent(new CustomEvent('geomine-backend-connected'));
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('geomine-backend-connected'));
+            }
+          }
+        } else {
+          if (isConnected) {
+            isConnected = false;
+            if (typeof window !== 'undefined') {
+              window.dispatchEvent(new CustomEvent('geomine-backend-disconnected'));
+            }
           }
         }
       } catch (e) {
-        isConnected = false;
+        if (isConnected) {
+          isConnected = false;
+          if (typeof window !== 'undefined') {
+            window.dispatchEvent(new CustomEvent('geomine-backend-disconnected'));
+          }
+        }
       }
     };
     check();
-    monitorInterval = setInterval(check, 4000);
+    monitorInterval = setInterval(check, 2500);
   }
 };
 

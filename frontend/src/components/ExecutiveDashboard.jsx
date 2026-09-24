@@ -18,33 +18,43 @@ export default function ExecutiveDashboard({ selectedSubsidiary, setActiveTab })
 
   useEffect(() => {
     let isMounted = true;
-    api.getAnalytics(selectedSubsidiary)
-      .then(data => { if (isMounted) setAnalytics(data); })
-      .catch(() => {
-        if (isMounted) {
-          setAnalytics({
-            documents_processed: 128,
-            pages_processed: 4820,
-            fields_extracted: 24500,
-            reports_generated: 84,
-            queries_answered: 312,
-            measured_accuracy: '98.6%',
-            measured_time_saved: '88.5%'
-          });
-        }
-      });
+    const fetchAnalyticsData = () => {
+      api.getAnalytics(selectedSubsidiary)
+        .then(data => { if (isMounted) setAnalytics(data); })
+        .catch(() => {
+          if (isMounted) {
+            setAnalytics({
+              documents_processed: 128,
+              pages_processed: 4820,
+              fields_extracted: 24500,
+              reports_generated: 84,
+              queries_answered: 312,
+              measured_accuracy: '98.6%',
+              measured_time_saved: '88.5%'
+            });
+          }
+        });
 
-    api.getProductionAnalytics(selectedSubsidiary)
-      .then(res => {
-        if (isMounted && res && res.production_trend) {
-          setProductionChartData(res.production_trend);
-        }
-      })
-      .catch(() => {
-        if (isMounted) setProductionChartData(HISTORICAL_PRODUCTION_DATA);
-      });
+      api.getProductionAnalytics(selectedSubsidiary)
+        .then(res => {
+          if (isMounted && res && res.production_trend) {
+            setProductionChartData(res.production_trend);
+          }
+        })
+        .catch(() => {
+          if (isMounted) setProductionChartData(HISTORICAL_PRODUCTION_DATA);
+        });
+    };
 
-    return () => { isMounted = false; };
+    fetchAnalyticsData();
+
+    const handleConnect = () => fetchAnalyticsData();
+    window.addEventListener('geomine-backend-connected', handleConnect);
+
+    return () => { 
+      isMounted = false; 
+      window.removeEventListener('geomine-backend-connected', handleConnect);
+    };
   }, [selectedSubsidiary]);
 
   return (
